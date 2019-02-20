@@ -4,6 +4,10 @@ from pyspark.sql.types import StructField, StructType, IntegerType, StringType, 
 import pyspark.sql.functions as f
 import requests, json, os, sys, time, re
 
+sc = SparkContext()
+sqlContext = SQLContext(sc)
+spark = SparkSession(sc)
+
 def get_app_detail(appid):
     for i in range(3):
         try:
