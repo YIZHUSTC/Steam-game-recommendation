@@ -1,3 +1,7 @@
+from pyspark import SparkContext
+from pyspark.sql import SQLContext, SparkSession, Row
+from pyspark.sql.types import StructField, StructType, IntegerType, StringType, LongType, DoubleType, DateType
+import pyspark.sql.functions as f
 import requests, json, os, sys, time, re
 
 def get_game_list(user_id):
