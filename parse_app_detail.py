@@ -132,11 +132,11 @@ def parse_app_detail(detail):
     }
     
     spark.sql("INSERT INTO appinfo ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', \
-                                '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % \
-                                (about_the_game, appid, background, categories, detailed_description, developers,\
-                                 fullgame_appid, fullgame_name, genres, header_image, is_free, name,\
-                                 platforms_windows, platforms_mac, platforms_linux, price_overview, publishers,\
-                                 screenshots, short_description, support_info_url, support_info_email,\
-                                 supported_languages, apptype, website))
+                                    '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % \
+                                    (about_the_game, appid, background, categories, detailed_description, developers,\
+                                     fullgame_appid, fullgame_name, genres, header_image, is_free, name,\
+                                     platforms_windows, platforms_mac, platforms_linux, price_overview, publishers,\
+                                     screenshots, short_description, support_info_url, support_info_email,\
+                                     supported_languages, apptype, website))
     
     return app_detail
