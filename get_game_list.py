@@ -23,8 +23,7 @@ def get_game_list(user_id):
             except:
                 time.sleep(5)
                 pass
-
-            
+    
     if games and len(games) > 0:
         gamelist = []
         f = open('userinfo', 'a')
