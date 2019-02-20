@@ -36,6 +36,5 @@ def content_similarity(parsed):
                                                 }).toDF()
     
     cosine_similarity.write.parquet('app_content_based_similarity', mode = 'overwrite')
-    cosine_similarity.show()
     
     return cosine_similarity
