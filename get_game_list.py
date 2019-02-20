@@ -2,7 +2,7 @@ import requests, json, os, sys, time, re
 
 def get_game_list(user_id):
     base_url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/'
-    keys = [key1, key2
+    keys = [key1, key2]
     curr_keyid = 0
     params = {
             'key' : keys[curr_keyid],
