@@ -4,6 +4,10 @@ from pyspark.sql.types import StructField, StructType, IntegerType, StringType, 
 import pyspark.sql.functions as f
 import requests, json, os, sys, time, re
 
+sc = SparkContext()
+sqlContext = SQLContext(sc)
+spark = SparkSession(sc)
+
 def get_game_list(user_id):
     base_url = 'http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/'
     keys = [key1, key2]
