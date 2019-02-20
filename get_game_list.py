@@ -43,5 +43,5 @@ def get_game_list(user_id):
             userid = int(user_id.strip())
             appid = g.get('appid')
             playtime_forever = g.get('playtime_forever')
-            spark.sql('INSERT INTO userinfo (userid, appid, playtime_forever) VALUES (userid, appid, playtime_forever)')
+            spark.sql("INSERT INTO userinfo ('%s', '%s', '%s')" % (userid, appid, playtime_forever))
         return gamelist
