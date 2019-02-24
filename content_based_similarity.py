@@ -37,4 +37,20 @@ def content_similarity(parsed):
     
     cosine_similarity.write.parquet('app_content_based_similarity', mode = 'overwrite')
     cosine_similarity.write.saveAsTable('content_similarity')
+    
+    applist = cosine_similarity.select('appid1').distinct().rdd.map(lambda row:row[0]).collect()
+    for appid in applist:
+        top20 = findTop20(cosine_similarity, appid)
+        spark.sql("INSERT INTO content_top20 ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s',\
+                                                    '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')" % \
+                                              (appid, top20[0], top20[1], top20[2], top20[3], top20[4], top20[5], \
+                                                      top20[6], top20[7], top20[8], top20[9], top20[10], top20[11], \
+                                                      top20[12], top20[13], top20[14], top20[15], top20[16], \
+                                                      top20[17], top20[18], top20[19]))
     return cosine_similarity
+
+
+def findTop20(similarity_df, appid):
+    top20 = similarity_df.filter(similarity_df.appid1 == appid).sort('similarity', ascending = False)\
+            .select('appid2').limit(20)
+    return top20.rdd.map(lambda row:row[0]).collect()
