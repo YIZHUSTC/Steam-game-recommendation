@@ -1,5 +1,5 @@
 from pyspark import SparkContext
-from pyspark.sql import SQLContext, SparkSession, Row
+from pyspark.sql import SQLContext, SparkSession, Row, HiveContext
 from pyspark.sql.types import StructField, StructType, IntegerType, StringType, LongType, DoubleType, DateType
 import pyspark.sql.functions as f
 import requests, json, os, sys, time, re
