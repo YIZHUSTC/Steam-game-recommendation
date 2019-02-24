@@ -1,5 +1,5 @@
 from pyspark import SparkContext
-from pyspark.sql import SQLContext, SparkSession, Row
+from pyspark.sql import SQLContext, SparkSession, Row, HiveContext
 from pyspark.sql.types import StructField, StructType, IntegerType, StringType, LongType, DoubleType, DateType
 from pyspark.ml.feature import StopWordsRemover, HashingTF, IDF, Tokenizer
 from pyspark.ml.linalg import Vectors, SparseVector
