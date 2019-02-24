@@ -1,6 +1,5 @@
 from bs4 import BeautifulSoup
 from pyspark.sql import HiveContext
-import requests, json, os, sys, time, re
 
 def parse_app_detail(detail):
     if not detail:
